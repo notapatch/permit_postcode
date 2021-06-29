@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+# exit immediately if a command exits with a non-zero status
+set -e
+
+echo
+echo "[ bin/ci ] Running system tests"
+bin/rspec spec/system

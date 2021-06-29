@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+set -e
+
+bin/tests-unit
+bin/tests-system
+bin/rubocop
+bin/security-audits
+
+echo ""
+echo "[ bin/ci ] Analyzing Node modules"
+echo "[ bin/ci ] for security vulnerabilities"
+
+# Turn off auto-exit on command failures
+# because yarn will exit nonzero and we need
+# to examine the result before deciding if we should exit
+
+set +e
+yarn audit --level=moderate
+yarn_exit_code=$?
+set -e
+if [ $yarn_exit_code -lt 4 ]; then
+  echo ""
+  echo "[ bin/ci ] Vulnerabilities were found, but only at"
+  echo "[ bin/ci ] informational or low priority level"
+  echo "[ bin/ci ] These do not need to be fixed, but you"
+  echo "[ bin/ci ] should look into it."
+  echo "[ bin/ci ] To see them run 'yarn audit'"
+else
+  exit 1
+fi
+
+echo "[ bin/ci ] Done"

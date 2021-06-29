@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+# exit immedately if a command exits with a non-zero status
+set -e
+
+echo
+echo "[ bin/ci ] Running Rubocop"
+bundle exec rubocop
