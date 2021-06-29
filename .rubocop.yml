@@ -1,0 +1,51 @@
+require:
+  - rubocop-performance
+  - rubocop-rails
+  - rubocop-rspec
+
+AllCops:
+  TargetRubyVersion: 3.0
+  NewCops: enable
+  Exclude:
+    - Gemfile
+    - Rakefile
+    - db/**/*
+    - bin/**/*
+    - tmp/**/*
+    - config/**/*
+    - node_modules/**/*
+    - spec/rails_helper.rb
+    - test/**/*
+
+Metrics/BlockLength:
+  Enabled: false
+
+RSpec/ExampleLength:
+  Enabled: false
+
+RSpec/DescribedClass:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+Style/BlockComments:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/RedundantSelf:
+  Enabled: false
+
+Style/SingleArgumentDig:
+  Enabled: false
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+Style/TrailingCommaInArrayLiteral:
+  Enabled: false
