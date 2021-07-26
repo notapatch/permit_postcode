@@ -33,6 +33,8 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # factory replacement for fixtures
   gem 'factory_bot_rails'
+  # generating random test dta
+  gem 'faker'
   # test framework
   gem 'rspec-rails', '~> 5.0.0'
 end
