@@ -1,0 +1,18 @@
+pre-push:
+  commands:
+    security-audits:
+      run: bin/security-audits
+    rubocop:
+      run: bin/rubocop
+
+pre-commit:
+  commands:
+    unit-tests:
+      run: bin/tests-unit
+    system-tests:
+      run: bin/tests-system
+    rubocop:
+      # run rubocop only on changed files
+      files: git diff --name-only --staged
+      glob: "*.rb"
+      run: bundle exec rubocop --force-exclusion {files}
