@@ -21,7 +21,8 @@ def setup
 	log "Dropping & recreating the test database"
 	# Setting the RAILS_ENV explicitly to be sure
 	# we actually reset the test database
-	system!({ "RAILS_ENV" => "test" }, "bin/rails db:reset")
+  # I'm avoiding db:reset because I don't want to add db:seed
+	system!({ "RAILS_ENV" => "test" }, "bin/rails db:drop db:create db:schema:load")
 
 
 	log "All set up."
