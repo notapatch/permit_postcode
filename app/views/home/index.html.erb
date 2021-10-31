@@ -1,0 +1,71 @@
+<div style="margin-top:20px">
+  <%= form_with url: postcode_checks_path do |form| %>
+    <%= form.label :query, "Check postcode allowed:" %>
+    <%= form.text_field :query %>
+    <%= form.submit "Check" %>
+  <% end %>
+</div>
+<div style="display:flex;gap:20px;margin-top:40px;">
+  <div>
+    <h3>Lambeth</h3>
+    <ul>
+      <li>
+        SE1 7QA
+      </li>
+      <li>
+        SE11 4AA
+      </li>
+      <li>
+        Postcode.io is missing<br>
+        some Lambeth postcodes<br>
+        Ex: SE1 7SL <br>
+        <a href="https://www.doogal.co.uk/AdministrativeAreas.php?district=E09000022">according to this data</a>
+      </li>
+    </ul>
+  </div>
+  <div>
+    <h3>Southwark</h3>
+    <ul>
+      <li>
+        SE1 0AA
+      </li>
+      <li>
+        SE1 1AF
+      </li>
+      <li>
+        SE1 1GA
+      </li>
+      <li>
+        SE99 7YX
+      </li>
+    </ul>
+  </div>
+  <div>
+    <h3>Specials</h3>
+    <ul>
+      <li>
+        SH24 1AA
+      </li>
+      <li>
+        SH24 1AB
+      </li>
+    </ul>
+  </div>
+  <div>
+    <h3>No service</h3>
+    <ul>
+      <li>
+        CH33 9EE
+      </li>
+      <li>
+        PA64 6AB
+      </li>
+      <li>
+        MK77 1XY
+      </li>
+      <li>
+        L20 7SA
+      </li>
+    </ul>
+  </div>
+</div>
