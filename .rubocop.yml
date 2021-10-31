@@ -20,6 +20,10 @@ AllCops:
 Metrics/BlockLength:
   Enabled: false
 
+Metrics/MethodLength:
+  Exclude:
+   - app/controllers/postcode_checks_controller.rb
+
 RSpec/ExampleLength:
   Enabled: false
 
@@ -49,3 +53,9 @@ Style/StringLiterals:
 
 Style/TrailingCommaInArrayLiteral:
   Enabled: false
+
+
+# Temporary suppression
+Style/GuardClause:
+  Exclude:
+    - app/controllers/postcode_checks_controller.rb

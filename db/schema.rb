@@ -10,6 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2021_10_31_161421) do
+
+  create_table "allowed_postcodes", force: :cascade do |t|
+    t.string "postcode"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["postcode"], name: "index_allowed_postcodes_on_postcode"
+  end
 
 end
