@@ -12,7 +12,7 @@ module Clients
     end
 
     def retrieve_postcode(postcode)
-      response = connection.get(postcode.delete(" "))
+      response = connection.get(postcode.normalize)
       Result.new(response: response)
     end
 

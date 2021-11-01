@@ -21,7 +21,7 @@ RSpec.describe AllowedLsoa, type: :model do
     end
 
     it "excludes disallowed lsoa" do
-      expect(AllowedPostcode).not_to be_matching("westminster")
+      expect(AllowedLsoa).not_to be_matching("westminster")
     end
   end
 end

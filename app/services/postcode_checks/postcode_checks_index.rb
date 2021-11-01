@@ -1,11 +1,10 @@
 module PostcodeChecks
   class PostcodeChecksIndex
     def postcode_checks_index(postcode:)
-      normalized_postcode = postcode.delete(" ")
-      allow = AllowedPostcode.matching?(normalized_postcode)
+      allow = AllowedPostcode.matching?(postcode)
       return Result.new(allowed: allow) if allow
 
-      result = Clients::PostcodesIo.new.retrieve_postcode(normalized_postcode)
+      result = Clients::PostcodesIo.new.retrieve_postcode(postcode)
       if result.success?
         allow = AllowedLsoa.matching?(result.lsoa.rpartition(" ")[0])
         return Result.new(allowed: allow)

@@ -2,7 +2,7 @@ class PostcodeChecksController < ApplicationController
   def create
     result = PostcodeChecks::PostcodeChecksIndex
              .new
-             .postcode_checks_index(postcode: params["query"])
+             .postcode_checks_index(postcode: Postcode.new(params["query"]))
     message = if result.allowed?
                 "Good news, we can deliver"
               else
