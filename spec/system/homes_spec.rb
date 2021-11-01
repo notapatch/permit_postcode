@@ -13,7 +13,7 @@ RSpec.describe "Homes", type: :system do
   end
 
   it "refuses disallowed postcode" do
-    VCR.use_cassette("system/homes_spec/refuses-disallowed-postcode") do
+    VCR.use_cassette(vcr_path("refuses disallowed postcode")) do
       visit root_path
 
       expect(page).to have_text("Check postcode allowed")
@@ -26,5 +26,9 @@ RSpec.describe "Homes", type: :system do
 
   it "displays errors when not fully formed postcode" do
     skip("TODO error path")
+  end
+
+  def vcr_path(filename)
+    "system/homes_spec/#{filename}"
   end
 end

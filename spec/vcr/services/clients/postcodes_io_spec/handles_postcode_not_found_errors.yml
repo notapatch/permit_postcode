@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.postcodes.io/postcodes/SH241AA
+    uri: https://api.postcodes.io/postcodes/888
     body:
       encoding: US-ASCII
       string: ''
@@ -15,11 +15,11 @@ http_interactions:
       message: Not Found
     headers:
       date:
-      - Mon, 01 Nov 2021 18:46:11 GMT
+      - Mon, 01 Nov 2021 21:25:35 GMT
       content-type:
       - application/json; charset=utf-8
       content-length:
-      - '43'
+      - '41'
       connection:
       - keep-alive
       x-gnu:
@@ -27,13 +27,15 @@ http_interactions:
       access-control-allow-origin:
       - "*"
       etag:
-      - W/"2b-60dCBHUxbddknotWwisUCk6O8SA"
+      - W/"29-T14TWaKfjMuMFPoRgcsDj2g1ORs"
       cf-cache-status:
       - HIT
+      age:
+      - '39954'
       expect-ct:
       - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
       report-to:
-      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=Ei3iU%2FrnIzbrhWSZNafp5hB5immdVvC1QBIKRt7na28R9F4sm1EgcPsVloTouTzcDtCQEF0363qk6cKObHTd1EY1Zf5VeDhJmCLhmyJq%2BcY5wUntPE3N6b%2BhTWZN333Q2Zg%3D"}],"group":"cf-nel","max_age":604800}'
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=ka95OqqvROVtbzDBzo6b6suQKFet2Wy5cEztyrDFeZOJbeIe1fazaAvT5BTIzt7hXBy7z8Nh8OcqlbQaPorXi8nLCiSWn69KsLgGDjlP8OZPHPDj8lt3DAWs1lNc%2BTKVo%2Bk%3D"}],"group":"cf-nel","max_age":604800}'
       nel:
       - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
       vary:
@@ -41,9 +43,9 @@ http_interactions:
       server:
       - cloudflare
       cf-ray:
-      - 6a7748d258bb54b2-MAN
+      - 6a7832520c4276b9-LHR
     body:
       encoding: UTF-8
-      string: '{"status":404,"error":"Postcode not found"}'
-  recorded_at: Mon, 01 Nov 2021 18:46:10 GMT
+      string: '{"status":404,"error":"Invalid postcode"}'
+  recorded_at: Mon, 01 Nov 2021 21:25:34 GMT
 recorded_with: VCR 6.0.0
