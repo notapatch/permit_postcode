@@ -8,6 +8,7 @@ RSpec.describe PostcodeChecker, type: :service do
         result = PostcodeChecker.new.call(Postcode.new("sw1a 1aa"))
 
         expect(result.allowed?).to eq true
+        expect(result.error).to be_nil
       end
     end
 
@@ -17,6 +18,7 @@ RSpec.describe PostcodeChecker, type: :service do
         result = PostcodeChecker.new.call(Postcode.new("mk10 1sa"))
 
         expect(result.allowed?).to eq true
+        expect(result.error).to be_nil
       end
     end
 
@@ -25,6 +27,7 @@ RSpec.describe PostcodeChecker, type: :service do
         result = PostcodeChecker.new.call(Postcode.new("sw1a 1aa"))
 
         expect(result.allowed?).to eq false
+        expect(result.error).to be_nil
       end
     end
   end
@@ -35,6 +38,7 @@ RSpec.describe PostcodeChecker, type: :service do
       result = PostcodeChecker.new.call(Postcode.new("SH24 1AA"))
 
       expect(result.allowed?).to eq true
+      expect(result.error).to be_nil
     end
 
     it "refuses addresses in disallowed postcodes" do
@@ -42,6 +46,7 @@ RSpec.describe PostcodeChecker, type: :service do
         result = PostcodeChecker.new.call(Postcode.new("SH24 1AA"))
 
         expect(result.allowed?).to eq false
+        expect(result.error).to eq "Postcode not found"
       end
     end
   end

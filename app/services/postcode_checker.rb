@@ -9,12 +9,15 @@ class PostcodeChecker
       return Result.new(allowed: allow)
     end
 
-    Result.new(allowed: false)
+    Result.new(allowed: false, error: result.error)
   end
 
   class Result
-    def initialize(allowed:)
+    attr_reader :error
+
+    def initialize(allowed:, error: nil)
       @allowed = allowed
+      @error = error
     end
 
     def allowed?
