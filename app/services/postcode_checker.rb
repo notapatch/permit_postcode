@@ -1,5 +1,5 @@
 class PostcodeChecker
-  def call(postcode:)
+  def call(postcode)
     allow = AllowedPostcode.matching?(postcode)
     return Result.new(allowed: allow) if allow
 

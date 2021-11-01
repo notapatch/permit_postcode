@@ -1,8 +1,6 @@
 class PostcodeChecksController < ApplicationController
   def create
-    result = PostcodeChecker
-             .new
-             .call(postcode: Postcode.new(params["query"]))
+    result = PostcodeChecker.new.call(Postcode.new(params["query"]))
     message = if result.allowed?
                 "Good news, we can deliver"
               else
