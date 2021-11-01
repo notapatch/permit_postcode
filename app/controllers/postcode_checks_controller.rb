@@ -1,6 +1,6 @@
 class PostcodeChecksController < ApplicationController
   def create
-    result = PostcodeChecks::PostcodeChecksIndex
+    result = PostcodeChecker
              .new
              .postcode_checks_index(postcode: Postcode.new(params["query"]))
     message = if result.allowed?
