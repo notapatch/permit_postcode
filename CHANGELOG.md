@@ -22,3 +22,8 @@ PostcodeChecks::PostcodeChecksIndex Service added
   - I wrap most actions but this is definitely going to be complicated
   - Use the AllowedPostcode to find out if the postcode should be allowed or not.
 
+### Fet: Allow postcodes from within lsoa region
+
+Postcodes.io Error handling
+  - 200 is success, everything else is error.
+  - https://postcodes.io/docs  Error Handling

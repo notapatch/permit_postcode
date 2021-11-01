@@ -28,6 +28,10 @@ gem 'jbuilder', '~> 2.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
+gem 'faraday', '~> 1.8.0'
+
+gem 'faraday_middleware', '~> 1.2.0'
+
 group :development, :test do
   # bundler-audit enables bundle audit which analyzes our
   # dependencies for known vulnerabilities
