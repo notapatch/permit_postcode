@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.postcodes.io/postcodes/mk101sa
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.8.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Mon, 01 Nov 2021 17:30:49 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      x-gnu:
+      - Michael J Blanchard
+      access-control-allow-origin:
+      - "*"
+      etag:
+      - W/"38b-A5oG6iQnXdHLroXUUnM8Th30u7k"
+      cf-cache-status:
+      - MISS
+      expect-ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      report-to:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=WKr%2B26d%2Bign5xcO4Q7nc1fM5Jc0RUWWN3YJ%2B9Va%2BErjqZgu0HEPdMJ%2BMroTfOKmUd8z%2BM%2F3UovRHqlgZGDRwVMIptmoW3gnU%2FQOYH1zoKbCKzRmYPgsIqRPdi9dPvx0oX4g%3D"}],"group":"cf-nel","max_age":604800}'
+      nel:
+      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      vary:
+      - Accept-Encoding
+      server:
+      - cloudflare
+      cf-ray:
+      - 6a76da6acb4e7199-LHR
+    body:
+      encoding: ASCII-8BIT
+      string: '{"status":200,"result":{"postcode":"MK10 1SA","quality":1,"eastings":485082,"northings":239075,"country":"England","nhs_ha":"South
+        Central","longitude":-0.760872,"latitude":52.043552,"european_electoral_region":"South
+        East","primary_care_trust":"Milton Keynes","region":"South East","lsoa":"Milton
+        Keynes 014E","msoa":"Milton Keynes 014","incode":"1SA","outcode":"MK10","parliamentary_constituency":"Milton
+        Keynes North","admin_district":"Milton Keynes","parish":"Central Milton Keynes","admin_county":null,"admin_ward":"Central
+        Milton Keynes","ced":null,"ccg":"NHS Bedfordshire, Luton and Milton Keynes","nuts":"Milton
+        Keynes","codes":{"admin_district":"E06000042","admin_county":"E99999999","admin_ward":"E05009412","parish":"E04012225","parliamentary_constituency":"E14000821","ccg":"E38000249","ccg_id":"M1J4Y","ced":"E99999999","nuts":"TLJ12","lsoa":"E01033499","msoa":"E02003472","lau2":"E06000042"}}}'
+  recorded_at: Mon, 01 Nov 2021 17:30:48 GMT
+recorded_with: VCR 6.0.0

@@ -39,6 +39,10 @@ module Clients
       def success?
         @response.status == 200
       end
+
+      def error
+        @response.body.dig("error")
+      end
     end
   end
 end
