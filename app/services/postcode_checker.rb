@@ -3,7 +3,7 @@ class PostcodeChecker
     allow = AllowedPostcode.matching?(postcode)
     return Result.new(allowed: allow) if allow
 
-    result = Clients::PostcodesIo.new.retrieve_postcode(postcode)
+    result = lookup_postcode(postcode)
     if result.success?
       allow = AllowedLsoa.matching?(result.lsoa.rpartition(" ")[0])
       return Result.new(allowed: allow)
@@ -20,5 +20,11 @@ class PostcodeChecker
     def allowed?
       @allowed
     end
+  end
+
+  private
+
+  def lookup_postcode(postcode)
+    Clients::PostcodesIo.new.retrieve_postcode(postcode)
   end
 end
