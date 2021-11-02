@@ -8,7 +8,7 @@ module Clients
 
         expect(result).to be_success
         expect(result.error).to be_nil
-        expect(result.lsoa).to eq "Westminster 018C"
+        expect(result.lsoa.name_part).to eq "Westminster"
       end
     end
 
@@ -18,7 +18,7 @@ module Clients
 
         expect(result).to be_success
         expect(result.error).to be_nil
-        expect(result.lsoa).to eq "Westminster 018C"
+        expect(result.lsoa.name_part).to eq "Westminster"
       end
     end
 
@@ -28,7 +28,7 @@ module Clients
 
         expect(result).not_to be_success
         expect(result.error).to eq "Invalid postcode"
-        expect(result.lsoa).to be_nil
+        expect(result.lsoa.name_part).to be_empty
       end
     end
 

@@ -5,7 +5,7 @@ class PostcodeChecker
 
     result = lookup_postcode(postcode)
     if result.success?
-      allow = AllowedLsoa.matching?(result.lsoa.rpartition(" ")[0])
+      allow = AllowedLsoa.matching?(result.lsoa.name_part)
       return Result.new(allowed: allow)
     end
 

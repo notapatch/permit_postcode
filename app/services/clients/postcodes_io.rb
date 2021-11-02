@@ -33,7 +33,7 @@ module Clients
       end
 
       def lsoa
-        @response.body.dig("result", "lsoa")
+        Lsoa.new(@response.body.dig("result", "lsoa"))
       end
 
       def success?
