@@ -23,6 +23,10 @@ class PostcodeChecker
     def allowed?
       @allowed
     end
+
+    def success?
+      @error.blank?
+    end
   end
 
   private

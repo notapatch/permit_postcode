@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.postcodes.io/postcodes/SH241AA
+    uri: https://api.postcodes.io/postcodes/SW1A1AA
     body:
       encoding: US-ASCII
       string: ''
@@ -11,15 +11,15 @@ http_interactions:
       - Faraday v1.8.0
   response:
     status:
-      code: 404
-      message: Not Found
+      code: 200
+      message: OK
     headers:
       date:
-      - Mon, 01 Nov 2021 23:22:00 GMT
+      - Mon, 01 Nov 2021 23:41:11 GMT
       content-type:
       - application/json; charset=utf-8
-      content-length:
-      - '43'
+      transfer-encoding:
+      - chunked
       connection:
       - keep-alive
       x-gnu:
@@ -27,15 +27,15 @@ http_interactions:
       access-control-allow-origin:
       - "*"
       etag:
-      - W/"2b-60dCBHUxbddknotWwisUCk6O8SA"
+      - W/"367-lEC+KZ9gKD/aVkU0rBfrEJURxu8"
       cf-cache-status:
       - HIT
       age:
-      - '16549'
+      - '252972'
       expect-ct:
       - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
       report-to:
-      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=xcFGrggnHtG5L6GHACDcUyNR5L4IQLNv4Kg2nKQflSIbZZ%2FqdElBwVa2KwgD5P%2BUzXJWZNm2aj5qckOSzXEndP0B2K399pN5Z5f7HF9bRARC4ZfggiRzErfdQW%2FI7hjdHHs%3D"}],"group":"cf-nel","max_age":604800}'
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=223p%2BvG8VQHxVGGAe1CIvTlhytCTo%2FUsmTpzBdgLhlTOcaaK1ZrghUMB8C%2Fi5Gt8faoBAIGGj2cf9NPbzOs5TUhByeZk57A9ZM1kB0SD%2FQ5yM5gJnag2lk1kxCVVGgurSmk%3D"}],"group":"cf-nel","max_age":604800}'
       nel:
       - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
       vary:
@@ -43,9 +43,13 @@ http_interactions:
       server:
       - cloudflare
       cf-ray:
-      - 6a78dcd8fd1f35bf-MAN
+      - 6a78f8f2596135d1-MAN
     body:
-      encoding: UTF-8
-      string: '{"status":404,"error":"Postcode not found"}'
-  recorded_at: Mon, 01 Nov 2021 23:21:58 GMT
+      encoding: ASCII-8BIT
+      string: '{"status":200,"result":{"postcode":"SW1A 1AA","quality":1,"eastings":529090,"northings":179645,"country":"England","nhs_ha":"London","longitude":-0.141588,"latitude":51.501009,"european_electoral_region":"London","primary_care_trust":"Westminster","region":"London","lsoa":"Westminster
+        018C","msoa":"Westminster 018","incode":"1AA","outcode":"SW1A","parliamentary_constituency":"Cities
+        of London and Westminster","admin_district":"Westminster","parish":"Westminster,
+        unparished area","admin_county":null,"admin_ward":"St James''s","ced":null,"ccg":"NHS
+        North West London","nuts":"Westminster","codes":{"admin_district":"E09000033","admin_county":"E99999999","admin_ward":"E05000644","parish":"E43000236","parliamentary_constituency":"E14000639","ccg":"E38000256","ccg_id":"W2U3Z","ced":"E99999999","nuts":"TLI32","lsoa":"E01004736","msoa":"E02000977","lau2":"E09000033"}}}'
+  recorded_at: Mon, 01 Nov 2021 23:41:09 GMT
 recorded_with: VCR 6.0.0

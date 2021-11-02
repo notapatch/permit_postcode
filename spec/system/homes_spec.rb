@@ -17,15 +17,23 @@ RSpec.describe "Homes", type: :system do
       visit root_path
 
       expect(page).to have_text("Check postcode allowed")
-      fill_in "Check postcode allowed", with: "SH24 1AA"
+      fill_in "Check postcode allowed", with: "SW1A 1AA"
       click_on "Check"
 
       expect(page).to have_text("Sorry our services are not available in your area")
     end
   end
 
-  it "displays errors when not fully formed postcode" do
-    skip("TODO error path")
+  it "displays errors when bad postcode" do
+    VCR.use_cassette(vcr_path("displays errors when bad postcode")) do
+      visit root_path
+
+      expect(page).to have_text("Check postcode allowed")
+      fill_in "Check postcode allowed", with: "888"
+      click_on "Check"
+
+      expect(page).to have_text("Invalid postcode")
+    end
   end
 
   def vcr_path(filename)

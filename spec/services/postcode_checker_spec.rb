@@ -7,6 +7,7 @@ RSpec.describe PostcodeChecker, type: :service do
         create(:allowed_lsoa, lsoa: "westminster")
         result = PostcodeChecker.new.call(Postcode.new("sw1a 1aa"))
 
+        expect(result.success?).to eq true
         expect(result.allowed?).to eq true
         expect(result.error).to be_nil
       end
@@ -17,6 +18,7 @@ RSpec.describe PostcodeChecker, type: :service do
         create(:allowed_lsoa, lsoa: "milton keynes")
         result = PostcodeChecker.new.call(Postcode.new("mk10 1sa"))
 
+        expect(result.success?).to eq true
         expect(result.allowed?).to eq true
         expect(result.error).to be_nil
       end
@@ -26,6 +28,7 @@ RSpec.describe PostcodeChecker, type: :service do
       VCR.use_cassette vcr_path("serves addresses in allowed lsoh") do
         result = PostcodeChecker.new.call(Postcode.new("sw1a 1aa"))
 
+        expect(result.success?).to eq true
         expect(result.allowed?).to eq false
         expect(result.error).to be_nil
       end
@@ -37,6 +40,7 @@ RSpec.describe PostcodeChecker, type: :service do
       create(:allowed_postcode, postcode: "SH241AA")
       result = PostcodeChecker.new.call(Postcode.new("SH24 1AA"))
 
+      expect(result.success?).to eq true
       expect(result.allowed?).to eq true
       expect(result.error).to be_nil
     end
@@ -45,6 +49,7 @@ RSpec.describe PostcodeChecker, type: :service do
       VCR.use_cassette vcr_path("refuses addresses in disallowed postcodes") do
         result = PostcodeChecker.new.call(Postcode.new("SH24 1AA"))
 
+        expect(result.success?).to eq false
         expect(result.allowed?).to eq false
         expect(result.error).to eq "Postcode not found"
       end
