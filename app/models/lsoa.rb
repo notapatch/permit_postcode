@@ -13,4 +13,8 @@ class Lsoa
   def name_part
     @lsoa.rpartition(" ")[0]
   end
+
+  def to_s
+    @lsoa
+  end
 end

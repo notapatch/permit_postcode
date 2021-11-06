@@ -8,4 +8,8 @@ class Postcode
   def normalize
     @postcode.delete(" ").upcase
   end
+
+  def to_s
+    @postcode
+  end
 end
