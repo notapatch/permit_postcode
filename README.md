@@ -1,6 +1,10 @@
 # README
 
-# Product Feedback App - The URL shortening application
+# Product Feedback App 
+
+- a simple web application to work out if a given postcode is within their service area.
+
+![](docs/PermitPostcode.png)
 
 ## Setup
 
@@ -33,3 +37,7 @@
 - AllowedPostcode - list of postcodes that we service
 - Lsoa - simple wrapper around lsoa data
 - Postcode - simple wrapper around Postcode data
+
+### Technical document
+
+[Article covering the different technical decisions made in making the project](docs/technical_decisions.md)
